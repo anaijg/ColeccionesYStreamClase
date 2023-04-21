@@ -45,11 +45,40 @@ public class Main {
             }
         });
         imprimirSocios(socios);
+
+        System.out.println("\nOrdenamos por idSocio");
+        socios.sort((s1, s2) -> s1.idSocio - s2.idSocio);
+        imprimirSocios(socios);
+        // ¡¡ATENCIÓN!! --> PARA ORDENAR AL REVÉS HACEMOS LO MISMO PERO INVIRTIENDO EL ORDEN DE LOS SOCIOS EN LA RESTA
+        System.out.println("\nOrdenamos por idSocio al revés");
+        socios.sort((s1, s2) -> s2.idSocio - s1.idSocio);
+        imprimirSocios(socios);
+
+        System.out.println("\nOrdenamos por nombre");
+        socios.sort((s1, s2) -> s1.nombre.compareToIgnoreCase(s2.nombre));
+        imprimirSocios(socios);
+        // ¡¡ATENCIÓN!! --> PARA ORDENAR AL REVÉS HACEMOS LO MISMO PERO INVIRTIENDO EL ORDEN DE LOS SOCIOS EN LA RESTA
+        System.out.println("\nOrdenamos por idSocio al revés");
+        socios.sort((s1, s2) -> s2.nombre.compareToIgnoreCase(s1.nombre));
+        imprimirSocios(socios);
+
+
+
+
     }
 
     static void imprimirSocios(ArrayList<Socio> socios) {
-        for (Socio elemento: socios) {
+        /*for (Socio elemento: socios) {
             System.out.println(elemento);
-        }
+        }*/
+        socios.forEach(socio -> System.out.println(socio));
+    }
+
+    private static int compare(Socio s1, Socio s2) {
+        return s2.idSocio - s1.idSocio;
+    }
+
+    private static int compare2(Socio s1, Socio s2) {
+        return s1.idSocio - s2.idSocio;
     }
 }

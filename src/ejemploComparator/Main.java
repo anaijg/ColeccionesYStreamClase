@@ -26,12 +26,30 @@ public class Main {
         // y ahora ya podemos ordenar pasando ese objeto al método sort
         socios.sort(comparaFNacimiento);
         System.out.println("\nOrdenados por fecha de nacimiento");
-        imprimirSocios(socios);
+        //imprimirSocios(socios);
         // ordenamos por fecha de nacimiento, al revés
         Comparator comparaFNacimientoDesc = comparaFNacimiento.reversed();
         socios.sort(comparaFNacimientoDesc);
         System.out.println("\nOrdenados por fecha de nacimiento al revés");
+        //imprimirSocios(socios);
+
+
+        System.out.println("\nOrdenados por idSocio");
+        ComparaIdSocio comparaIdSocio = new ComparaIdSocio();
+        socios.sort(comparaIdSocio);
+        //imprimirSocios(socios);
+        System.out.println("\nOrdenados por idSocio al revés");
+        socios.sort(comparaIdSocio.reversed());
+        //imprimirSocios(socios);
+
+        System.out.println("\nOrdenados por nombre");
+        ComparaNombre comparaNombre = new ComparaNombre();
+        socios.sort(comparaNombre);
         imprimirSocios(socios);
+        System.out.println("\nOrdenados por nombre al revés");
+        socios.sort(comparaNombre.reversed());
+        imprimirSocios(socios);
+
     }
 
     static void imprimirSocios(ArrayList<Socio> socios) {
