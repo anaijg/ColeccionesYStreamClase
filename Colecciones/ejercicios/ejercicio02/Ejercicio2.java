@@ -1,4 +1,4 @@
-package ejercicios.ejercicio2;
+package ejercicios.ejercicio02;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,6 +29,13 @@ public class Ejercicio2 {
         números.stream()
                 .filter(n -> n % 2 == 0) // filtro los pares
                 .forEach(n -> System.out.print(n + " ")); // los imprimo
+
+// Por último, se eliminarán
+//todos los múltiplos de 3 y se mostrará por pantalla la colección resultante.
+        números.removeIf(n -> n % 3 == 0); // tambien puede hacerse con el método remove() combinado con un for, o mejor con iterator
+
+        System.out.println();
+        números.forEach(n -> System.out.print(n + " "));
 
 
     }

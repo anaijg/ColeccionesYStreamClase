@@ -1,4 +1,4 @@
-package ejercicios.ejercicio1;
+package ejercicios.ejercicio01;
 
 public class Hotel {
     private int idHotel;
