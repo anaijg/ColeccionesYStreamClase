@@ -1,4 +1,4 @@
-package ejercicios.ejercicios07;
+package ejercicios.ejercicio07;
 
 import java.util.*;
 
