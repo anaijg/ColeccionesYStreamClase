@@ -47,7 +47,20 @@ public class Ejercicio08 {
                 .stream()
                 .sorted((entrada1, entrada2) -> entrada1.getKey().compareTo(entrada2.getKey())).toList();
         System.out.println(entryList);
+        // con letra --> tirar del mapa
+        // ordenar por nombre
+        List<Map.Entry<Character, Academico>> entryList2 = academicoMap.entrySet()
+                .stream()
+                .sorted((entrada1, entrada2) -> entrada1.getValue().getNombre().compareToIgnoreCase(entrada2.getValue().getNombre())).toList(); // entrada.getValue() es un Académico
+        System.out.println("\nCon letra, ordenados por nombre:");
+        System.out.println(entryList2);
+        // ordenar por fecha de ingreso
+        List<Map.Entry<Character, Academico>> entryList3 = academicoMap.entrySet()
+                .stream()
+                .sorted((entrada1, entrada2) -> entrada1.getValue().getAñoIngreso() - entrada2.getValue().getAñoIngreso()).toList();
 
+        System.out.println("\nCon letra, ordenados por año:");
+        System.out.println(entryList3);
     }
 
     static boolean nuevoAcadémico(Map<Character, Academico> academia, Academico nuevo, Character letra) {
